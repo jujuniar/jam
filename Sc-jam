@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Link Generator & Cloacker. Ultimately Link cloacker for Facebook">
+  <meta name="keywords" content="link cloacker, facebook, instagram, cloack, generator link, short link">
+  <meta name="author" content="AutoFOOLS">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>AutoFOOLS - Ultimate Team Force</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .teksberjalan {
+      font-weight: bold;
+      margin: 10px 0;
+      padding: 0 10px;
+    }
+    .teksberjalan h3 {
+      margin: 0px;
+      padding: 0px;
+    }
+  </style>
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>  
+  <div class='container'>
+    <div class="row">
+      <h1>
+        <div class="col-md-6">
+          <a href="index.php">
+            <img src="images/logo.png" style="max-height: 50px">
+          </a>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="index.php" class="btn btn-danger"><i class="fa fa-link"></i> Home</a>
+                              
+        </div>
+      </h1>
+    </div>
+    <div class="row teksberjalan">
+      <!--<marquee>
+    <h3>"<span class="text-danger">Keraguan</span> adalah musuh terbesar dalam meraih kesuksesan, terimakasih masih tetap bersama <strong style="color: red">BLT</strong>"</h3>
+      </marquee>-->
+    </div>
+  </div>
+  <div class='container'>
+<form class="form-signin" method="post" action="">
+  <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <label for="username" class="sr-only">Username</label>
+  <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
+
+</form>
+
+</div>
+
+<div class='text-center mb-1' >
+
+<img src="images/logo.png" style="max-height: 30px"><br />
+2020 AutoFOOLS
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+<script>
+
+function generate() {
+        var machine_id = document.getElementById("machine_id").value,
+        licensed_to = document.getElementById("licensed_to").value,
+        licensed_expiry = document.getElementById("licensed_expiry").value;
+        var url = "generate.php",
+            data = "machine_id="+encodeURIComponent(machine_id)+"&licensed_to="+encodeURIComponent(licensed_to)+"&licensed_expiry="+encodeURIComponent(licensed_expiry),
+            req = new XMLHttpRequest();
+
+        req.open('POST',url, true);
+        req.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        req.onreadystatechange = function(){
+            if(req.readyState==4)
+			{
+				if(req.status==200)
+				{
+                    document.getElementById("license_key").value = req.responseText;
+                } else {
+
+                }
+            }
+        };
+        req.send(data);
+
+}
+</script>
+</body>
+</html>
